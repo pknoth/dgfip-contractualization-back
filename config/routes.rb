@@ -1,3 +1,21 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  scope :api do
+    resources :enrollments do
+      resources :messages
+      member do
+        get :convention
+        patch :trigger
+      end
+    end
+
+    get 'users/access_denied'
+  end
+
+  devise_scope :api do
+    devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  end
+
+  get '/uploads/:model/:type/:mounted_as/:id/:filename', to: 'documents#show'
 end

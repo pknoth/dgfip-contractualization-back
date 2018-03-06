@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -5,14 +7,31 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'carrierwave'
+gem 'carrierwave-i18n'
+gem 'devise'
+gem 'faraday_middleware'
+gem 'jwt'
+gem 'omniauth-oauth2'
+gem 'pg'
+gem 'prawn-rails'
+gem 'prawn-table'
 gem 'puma', '~> 3.7'
+gem 'pundit'
 gem 'rack-cors'
 gem 'rails', '~> 5.1.4'
-gem 'sqlite3'
+gem 'rails-i18n'
+gem 'rmagick'
+gem 'rolify'
+gem 'rubyzip'
+gem 'state_machines-activerecord'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'webmock'
+  gem 'simplecov'
 end
 
 group :development do

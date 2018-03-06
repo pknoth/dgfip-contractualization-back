@@ -1,0 +1,8 @@
+test:
+  callback_url: http://test.host
+development:
+  callback_url: http://localhost:4200
+docker:
+  callback_url: http://localhost:4200/#/oauth-callback
+production:
+  callback_url: https://impots.particulier.api.gouv.fr/#/oauth-callback
